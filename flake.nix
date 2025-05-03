@@ -91,6 +91,8 @@
     darwinConfigurations."rishaanair" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
+
+        # Home-manager
         home-manager.darwinModules.home-manager
         {
           users.users."phush".home = "/Users/phush";
@@ -102,6 +104,8 @@
             users."phush" = import ./home.nix;
           };
         }
+
+        # Homebrew
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
@@ -116,7 +120,10 @@
           };
           homebrew = {
             enable = true;
-            casks = ["cursor"];
+            onActivation.cleanup = "zap";
+            casks = [
+              "cursor"
+            ];
           };
         }
       ];
