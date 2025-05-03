@@ -42,6 +42,9 @@
         git
         gh
 
+        zig
+        zls
+
         mkalias
       ];
 
