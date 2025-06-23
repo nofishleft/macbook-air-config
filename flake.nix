@@ -16,8 +16,6 @@
 
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "nix-darwin";
     };
 
     homebrew-core = {
@@ -55,6 +53,8 @@
       fonts.packages = [
         pkgs.nerd-fonts.jetbrains-mono
       ];
+
+      system.primaryUser = "phush";
 
       system.activationScripts.applications.text = let
 	env = pkgs.buildEnv {
