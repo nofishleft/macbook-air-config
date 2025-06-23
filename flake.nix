@@ -35,15 +35,19 @@
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
+      nixpkgs.config.allowUnfree = true;
       environment.systemPackages = with pkgs; [
         vim
         neovim
         iterm2
         git
         gh
+	git-lfs
 
         zig
         zls
+
+	jetbrains.rust-rover
 
         mkalias
       ];
@@ -125,7 +129,9 @@
             enable = true;
             onActivation.cleanup = "zap";
             casks = [
+	      "visual-studio-code"
               "cursor"
+	      #"gnupg"
             ];
           };
         }
