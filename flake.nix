@@ -38,14 +38,19 @@
         vim
         neovim
         iterm2
+
         git
         gh
 	git-lfs
+	gitui
+	delta
+	gnupg
 
         zig
         zls
 
 	jetbrains.rust-rover
+	zed-editor
 
         mkalias
       ];
@@ -130,8 +135,6 @@
             onActivation.cleanup = "zap";
             casks = [
 	      "visual-studio-code"
-              "cursor"
-	      #"gnupg"
             ];
           };
         }
